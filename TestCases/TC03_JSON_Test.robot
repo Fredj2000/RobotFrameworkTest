@@ -17,3 +17,6 @@ JSON TEST
 
     ${country_value}=  Get Value From Json     ${json_obj}  $.address.country["1st"]
     Should Be Equal As Strings    ${country_value[0]}    Tunisia
+
+    ${country_value}=  Get Value From Json     ${json_obj}  $.address.country["2st"]
+    Should Be Equal As Strings    ${country_value[0]}    Germany
