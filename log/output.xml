@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-04-24T16:36:31.603257" rpa="false" schemaversion="5">
+<suite id="s1" name="TC03 JSON Test" source="C:\Users\DELL\Desktop\Thales\APIAutomation\TestCases\TC03_JSON_Test.robot">
+<test id="s1-t1" name="JSON TEST" line="8">
+<kw name="Load Json From File" owner="JSONLibrary">
+<msg time="2025-04-24T16:36:31.849682" level="ERROR">JSON file: C:UsersDELLDesktopThales	est.json not found</msg>
+<msg time="2025-04-24T16:36:31.855501" level="FAIL">OSError</msg>
+<var>${json_obj}</var>
+<arg>C:\Users\DELL\Desktop\Thales\test.json</arg>
+<doc>Load JSON from file.</doc>
+<status status="FAIL" start="2025-04-24T16:36:31.848690" elapsed="0.009310">OSError</status>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<var>${name_value}</var>
+<arg>${json_obj}</arg>
+<arg>$.name</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="NOT RUN" start="2025-04-24T16:36:31.858320" elapsed="0.000142"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${name_value}</arg>
+<arg>Limited Edition Ultra HD Smart TV</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" start="2025-04-24T16:36:31.858643" elapsed="0.000105"/>
+</kw>
+<status status="FAIL" start="2025-04-24T16:36:31.847121" elapsed="0.011837">OSError</status>
+</test>
+<status status="FAIL" start="2025-04-24T16:36:31.620936" elapsed="0.238996"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="TC03 JSON Test" id="s1" pass="0" fail="1" skip="0">TC03 JSON Test</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-04-24T16:36:31.849682" level="ERROR">JSON file: C:UsersDELLDesktopThales	est.json not found</msg>
+</errors>
+</robot>
