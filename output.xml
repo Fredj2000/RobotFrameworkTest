@@ -1,90 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-04-24T17:23:23.702343" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-04-27T11:45:12.386635" rpa="false" schemaversion="5">
 <suite id="s1" name="TC03 JSON Test" source="C:\Users\DELL\Desktop\Thales\APIAutomation\TestCases\TC03_JSON_Test.robot">
 <test id="s1-t1" name="JSON TEST" line="7">
 <kw name="Load Json From File" owner="JSONLibrary">
-<msg time="2025-04-24T17:23:23.840987" level="INFO">${json_obj} = {'id': 0, 'version': 5, 'productId': 'PROD-XL-2025-01', 'name': 'Limited Edition Ultra HD Smart TV', 'price': 1299.49, 'address': {'street': '123 Innovation Avenue', 'city': 'Techville', 'postalCode':...</msg>
+<msg time="2025-04-27T11:45:12.592041" level="INFO">${json_obj} = {'id': 0, 'version': 5, 'productId': 'PROD-XL-2025-01', 'name': 'Limited Edition Ultra HD Smart TV', 'price': 1299.49, 'address': {'street': '123 Innovation Avenue', 'city': 'Techville', 'postalCode':...</msg>
 <var>${json_obj}</var>
 <arg>C:\\Users\\DELL\\Desktop\\Thales\\test.json</arg>
 <doc>Load JSON from file.</doc>
-<status status="PASS" start="2025-04-24T17:23:23.840396" elapsed="0.000661"/>
+<status status="PASS" start="2025-04-27T11:45:12.591184" elapsed="0.000906"/>
 </kw>
 <kw name="Get Value From Json" owner="JSONLibrary">
-<msg time="2025-04-24T17:23:23.866397" level="INFO">${name_value} = ['Limited Edition Ultra HD Smart TV']</msg>
+<msg time="2025-04-27T11:45:12.615948" level="INFO">${name_value} = ['Limited Edition Ultra HD Smart TV']</msg>
 <var>${name_value}</var>
 <arg>${json_obj}</arg>
 <arg>$.name</arg>
 <doc>Get Value From JSON using JSONPath</doc>
-<status status="PASS" start="2025-04-24T17:23:23.841360" elapsed="0.025093"/>
+<status status="PASS" start="2025-04-27T11:45:12.592386" elapsed="0.023609"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${name_value[0]}</arg>
 <arg>Limited Edition Ultra HD Smart TV</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2025-04-24T17:23:23.866961" elapsed="0.000562"/>
+<status status="PASS" start="2025-04-27T11:45:12.616316" elapsed="0.000624"/>
 </kw>
 <kw name="Get Value From Json" owner="JSONLibrary">
-<msg time="2025-04-24T17:23:23.888024" level="INFO">${name_value} = [1299.49]</msg>
+<msg time="2025-04-27T11:45:12.636132" level="INFO">${name_value} = [1299.49]</msg>
 <var>${name_value}</var>
 <arg>${json_obj}</arg>
 <arg>$.price</arg>
 <doc>Get Value From JSON using JSONPath</doc>
-<status status="PASS" start="2025-04-24T17:23:23.867858" elapsed="0.020215"/>
+<status status="PASS" start="2025-04-27T11:45:12.617249" elapsed="0.018927"/>
 </kw>
 <kw name="Should Be Equal As Numbers" owner="BuiltIn">
-<msg time="2025-04-24T17:23:23.888950" level="INFO">Argument types are:
+<msg time="2025-04-27T11:45:12.637516" level="INFO">Argument types are:
 &lt;class 'float'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${name_value[0]}</arg>
 <arg>1299.49</arg>
 <doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="PASS" start="2025-04-24T17:23:23.888466" elapsed="0.000559"/>
+<status status="PASS" start="2025-04-27T11:45:12.636688" elapsed="0.000955"/>
 </kw>
 <kw name="Get Value From Json" owner="JSONLibrary">
-<msg time="2025-04-24T17:23:23.908886" level="INFO">${city_value} = ['Techville']</msg>
+<msg time="2025-04-27T11:45:12.658484" level="INFO">${city_value} = ['Techville']</msg>
 <var>${city_value}</var>
 <arg>${json_obj}</arg>
 <arg>$.address.city</arg>
 <doc>Get Value From JSON using JSONPath</doc>
-<status status="PASS" start="2025-04-24T17:23:23.889287" elapsed="0.019642"/>
+<status status="PASS" start="2025-04-27T11:45:12.638017" elapsed="0.020509"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${city_value[0]}</arg>
 <arg>Techville</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2025-04-24T17:23:23.909246" elapsed="0.000480"/>
+<status status="PASS" start="2025-04-27T11:45:12.658860" elapsed="0.000495"/>
 </kw>
 <kw name="Get Value From Json" owner="JSONLibrary">
-<msg time="2025-04-24T17:23:23.931139" level="INFO">${country_value} = ['Tunisia']</msg>
+<msg time="2025-04-27T11:45:12.677536" level="INFO">${postal_value} = ['54321']</msg>
+<var>${postal_value}</var>
+<arg>${json_obj}</arg>
+<arg>$.address.postalCode</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2025-04-27T11:45:12.659583" elapsed="0.017995"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<arg>${postal_value[0]}</arg>
+<arg>54321</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2025-04-27T11:45:12.677999" elapsed="0.000503"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2025-04-27T11:45:12.697364" level="INFO">${country_value} = ['Tunisia']</msg>
 <var>${country_value}</var>
 <arg>${json_obj}</arg>
 <arg>$.address.country["1st"]</arg>
 <doc>Get Value From JSON using JSONPath</doc>
-<status status="PASS" start="2025-04-24T17:23:23.909946" elapsed="0.021235"/>
+<status status="PASS" start="2025-04-27T11:45:12.678974" elapsed="0.018431"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${country_value[0]}</arg>
 <arg>Tunisia</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2025-04-24T17:23:23.931508" elapsed="0.000502"/>
+<status status="PASS" start="2025-04-27T11:45:12.697810" elapsed="0.000626"/>
 </kw>
 <kw name="Get Value From Json" owner="JSONLibrary">
-<msg time="2025-04-24T17:23:23.955423" level="INFO">${country_value} = ['Germany']</msg>
+<msg time="2025-04-27T11:45:12.718044" level="INFO">${country_value} = ['Germany']</msg>
 <var>${country_value}</var>
 <arg>${json_obj}</arg>
 <arg>$.address.country["2st"]</arg>
 <doc>Get Value From JSON using JSONPath</doc>
-<status status="PASS" start="2025-04-24T17:23:23.932612" elapsed="0.022851"/>
+<status status="PASS" start="2025-04-27T11:45:12.698762" elapsed="0.019324"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${country_value[0]}</arg>
 <arg>Germany</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2025-04-24T17:23:23.955794" elapsed="0.000484"/>
+<status status="PASS" start="2025-04-27T11:45:12.718491" elapsed="0.000597"/>
 </kw>
-<status status="PASS" start="2025-04-24T17:23:23.839463" elapsed="0.117043"/>
+<status status="PASS" start="2025-04-27T11:45:12.590020" elapsed="0.129394"/>
 </test>
-<status status="PASS" start="2025-04-24T17:23:23.704255" elapsed="0.253176"/>
+<status status="PASS" start="2025-04-27T11:45:12.388810" elapsed="0.331889"/>
 </suite>
 <statistics>
 <total>
